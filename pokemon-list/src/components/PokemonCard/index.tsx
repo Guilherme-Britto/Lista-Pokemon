@@ -27,12 +27,12 @@ export const PokemonCard = ({ pokemon }: CardProps) => {
   ]);
   const [statsValues, setStatsValues] = useState<string[]>([]);
   const [showLessInfo, setShowLessInfo] = useState("mais");
+
   const toggleShowFurtherInfo = () => {
     setShowLessInfo(showLessInfo === "mais" ? "menos" : "mais");
 
     setShowFurtherInfo(!showFurtherInfo);
   };
-
   function capitalizeFirstLetter(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -48,7 +48,6 @@ export const PokemonCard = ({ pokemon }: CardProps) => {
       const response = await api.get(`/pokemon/${pokemon.name}`);
 
       setStatsValues([]);
-
       response.data.stats.map((stat: any) => {
         setStatsValues((prevStat) => [...prevStat!, stat["base_stat"]]);
       });

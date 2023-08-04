@@ -50,6 +50,7 @@ export const LiHeader = styled.div`
   align-items: center;
 
   width: inherit;
+  height: 80px;
 `;
 
 export const LiMain = styled.div`
