@@ -13,13 +13,14 @@ export const ListPokemon = () => {
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
   const [pageOffSet, setPageOffSet] = useState(0);
   const pageValues = [
-    0, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98, 105,
+    0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108,
+    114, 120,
   ];
 
   const getFilteredPokemon = async (pageOffSet: number) => {
     const response = await api.get("/pokemon", {
       params: {
-        limit: 7,
+        limit: 6,
         offset: pageOffSet,
       },
     });
@@ -80,7 +81,7 @@ export const ListPokemon = () => {
             if (pageOffSet == 0) {
               return;
             }
-            setPageOffSet(pageOffSet - 7);
+            setPageOffSet(pageOffSet - 6);
             getFilteredPokemon(pageOffSet);
           }}
         >
@@ -99,7 +100,7 @@ export const ListPokemon = () => {
         ))}
         <span
           onClick={() => {
-            setPageOffSet(pageOffSet + 7);
+            setPageOffSet(pageOffSet + 6);
             getFilteredPokemon(pageOffSet);
           }}
         >
