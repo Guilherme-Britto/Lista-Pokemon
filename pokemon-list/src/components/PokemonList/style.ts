@@ -18,12 +18,21 @@ export const ButtonsContainer = styled.div`
     color: var(--color-blue-500);
   }
 
-  p {
-    font-size: 1.8rem;
+  button {
+    font-weight: 600;
+    font-size: 1.9rem;
+
+    background-color: unset;
+    border: unset;
 
     cursor: pointer;
-    font-weight: 600;
+  }
 
-    color: var(--color-blue-100);
+  .clicked {
+    color: var(--color-blue-800);
+  }
+
+  .notClicked {
+    color: var(--color-blue-300);
   }
 `;

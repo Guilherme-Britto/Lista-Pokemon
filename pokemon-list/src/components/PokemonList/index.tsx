@@ -88,7 +88,8 @@ export const ListPokemon = () => {
           &lt;
         </span>
         {pageValues.map((value, index) => (
-          <p
+          <button
+            className={value === pageOffSet ? "clicked" : "notClicked"}
             key={index}
             onClick={() => {
               setPageOffSet(value);
@@ -96,7 +97,7 @@ export const ListPokemon = () => {
             }}
           >
             {index + 1}
-          </p>
+          </button>
         ))}
         <span
           onClick={() => {
