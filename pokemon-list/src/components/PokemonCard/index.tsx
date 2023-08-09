@@ -78,13 +78,13 @@ export const PokemonCard = ({ pokemon }: CardProps) => {
               <li>
                 <p className="key">Abilidades</p>
                 {abilities.map((ability: string) => (
-                  <p> {capitalizeFirstLetter(ability)}</p>
+                  <p key={ability}> {capitalizeFirstLetter(ability)}</p>
                 ))}
               </li>
               <li>
                 <p className="key">Tipos</p>
                 {types.map((type: string) => (
-                  <p> {capitalizeFirstLetter(type)}</p>
+                  <p key={type}> {capitalizeFirstLetter(type)}</p>
                 ))}
               </li>
             </AbilityAndTypeCard>
